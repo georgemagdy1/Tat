@@ -21,7 +21,190 @@
         <link rel="icon" href="images/663-removebg-preview.png">
 
         <link href="css/tooplate-little-fashion.css" rel="stylesheet">
+<style>
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
 
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .course-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .course-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: linear-gradient(135deg, #113356 100%);
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .course-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .course-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .course-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .meta-item i {
+            color: black;
+            font-size: 18px;
+        }
+
+        .course-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .course-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: black;
+        }
+
+        .btn-enroll {
+            background: linear-gradient(135deg, #FFC107 0%, #113356 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-enroll:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            color: white;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        .features-list li {
+            padding: 8px 0;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            border: 2px solid #113356;
+            background: white;
+            color: black;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: linear-gradient(135deg, #FFC107 0%, #113356 100%);
+            color: white;
+        }
+
+        .course-item {
+            transition: opacity 0.3s ease;
+        }
+
+        .see-more-btn {
+            background: linear-gradient(135deg, #FFC107 0%, #113356 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 50px;
+        }
+
+        .see-more-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            color: white;
+        }
+</style>
     </head>
     
     <body>
@@ -51,7 +234,9 @@
                             <li class="nav-item">
                                 <a class="nav-link active" href="index.html">Home</a>
                             </li>
-
+<li class="nav-item">
+                                <a class="nav-link " href="courses.html">Courses</a>
+                            </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="faq.html">OUR Team</a>
@@ -131,7 +316,7 @@
                                 <div class="col-lg-6 col-10">
                                     <h1 class="slick-title"></h1>
 
-                                    <p class="lead text-white mt-lg-3 mb-lg-5">  </p>
+                                    <p class="lead text-white mt-lg-3 mb-lg-5"> </p>
 
                                    
                                 </div>
@@ -309,6 +494,258 @@ We aim to inspire creativity, develop critical skills, and prepare learners for 
                     </div>
                 </div>
             </section>
+<section>
+     
+
+       
+
+        <section class="section-padding">
+            <div class="container">
+                <!-- Filter Buttons -->
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Courses</button>
+                    <button class="filter-btn" data-filter="programming">Programming</button>
+                    <button class="filter-btn" data-filter="embedded">Robotices</button>
+                    <button class="filter-btn" data-filter="Kids_English">Kids_English</button>
+                    <button class="filter-btn" data-filter="Adults_English">Adults_English</button>
+                </div>
+
+                <!-- Courses Grid -->
+                <div class="row g-4" id="coursesContainer">
+                    
+                    <!-- Course 1: Full Stack Web Development -->
+                    <div class="col-lg-4 col-md-6 course-item" data-category="web">
+                        <div class="course-card">
+                            <img src="images/types-of-web-development-services (1).jpg" alt="Full Stack Web Development" class="course-image">
+                            <div class="course-content">
+                                <span class="course-badge">Web Development</span>
+                                <h3 class="course-title">Full Stack Web Development</h3>
+                                <p class="course-description">Master HTML, CSS, JavaScript, React, Node.js and build complete web applications from scratch.</p>
+                                
+                                <ul class="features-list">
+                                    <li>Frontend & Backend Development</li>
+                                    <li>Real-world Projects</li>
+                                    <li>Industry-standard Tools</li>
+                                    <li>Job-ready Skills</li>
+                                                                    </ul>
+
+                                <div class="course-meta">
+                                    <div class="meta-item">
+                                        <i class="bi bi-clock"></i>
+                                        <span>12 Weeks</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="bi bi-person"></i>
+                                        <span>Eng.George Magdy</span>
+                                    </div>
+                                </div>
+
+                                <div class="course-footer">
+                                    <div class="course-price">3500 EGP</div>
+                                    <a href="https://forms.gle/YOUR_BOOKING_LINK_1" target="_blank" class="btn-enroll">
+                                        Enroll Now <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 2: Embedded Systems & IoT -->
+                    <div class="col-lg-4 col-md-6 course-item" data-category="embedded">
+                        <div class="course-card">
+                            <img src="images/images (1).jpg" alt="Embedded Systems" class="course-image">
+                            <div class="course-content">
+                                <span class="course-badge">Embedded Systems</span>
+                                <h3 class="course-title">Embedded Systems & IoT</h3>
+                                <p class="course-description">Learn Arduino, Raspberry Pi, sensors, and build smart IoT projects with hands-on labs.</p>
+                                
+                                <ul class="features-list">
+                                    <li>Microcontroller Programming</li>
+                                    <li>IoT Communication Protocols</li>
+                                    <li>Hardware Integration</li>
+                                    <li>Real IoT Projects</li>
+                                </ul>
+
+                                <div class="course-meta">
+                                    <div class="meta-item">
+                                        <i class="bi bi-clock"></i>
+                                        <span>10 Weeks</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="bi bi-person"></i>
+                                        <span>Eng. George Magdy</span>
+                                    </div>
+                                </div>
+
+                                <div class="course-footer">
+                                    <div class="course-price">3000 EGP</div>
+                                    <a href="https://forms.gle/YOUR_BOOKING_LINK_2" target="_blank" class="btn-enroll">
+                                        Enroll Now <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 3: UI/UX Design -->
+                    <div class="col-lg-4 col-md-6 course-item" data-category="design">
+                        <div class="course-card">
+                            <img src="images/images (2)de.jpg" alt="UI/UX Design" class="course-image">
+                            <div class="course-content">
+                                <span class="course-badge">Digital Design</span>
+                                <h3 class="course-title">UI/UX Design Masterclass</h3>
+                                <p class="course-description">Create stunning user interfaces and exceptional user experiences using Figma and Adobe XD.</p>
+                                
+                                <ul class="features-list">
+                                    <li>Design Thinking Process</li>
+                                    <li>User Research & Testing</li>
+                                    <li>Prototyping & Wireframing</li>
+                                    <li>Portfolio Projects</li>
+                                </ul>
+
+                                <div class="course-meta">
+                                    <div class="meta-item">
+                                        <i class="bi bi-clock"></i>
+                                        <span>8 Weeks</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="bi bi-person"></i>
+                                        <span>Eng.George MAgdy</span>
+                                    </div>
+                                </div>
+
+                                <div class="course-footer">
+                                    <div class="course-price">2500 EGP</div>
+                                    <a href="https://forms.gle/YOUR_BOOKING_LINK_3" target="_blank" class="btn-enroll">
+                                        Enroll Now <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 4: Python Programming -->
+                    <div class="col-lg-4 col-md-6 course-item" data-category="programming">
+                        <div class="course-card">
+                            <img src="images/images21.png" alt="Python Programming" class="course-image">
+                            <div class="course-content">
+                                <span class="course-badge">Programming</span>
+                                <h3 class="course-title">Python Programming Fundamentals</h3>
+                                <p class="course-description">Start your programming journey with Python - from basics to advanced concepts and applications.</p>
+                                
+                                <ul class="features-list">
+                                    <li>Python Basics to Advanced</li>
+                                    <li>Data Structures & Algorithms</li>
+                                    <li>Object-Oriented Programming</li>
+                                    <li>Practical Projects</li>
+                                </ul>
+
+                                <div class="course-meta">
+                                    <div class="meta-item">
+                                        <i class="bi bi-clock"></i>
+                                        <span>10 Weeks</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="bi bi-person"></i>
+                                        <span>Eng.George Magdy</span>
+                                    </div>
+                                </div>
+
+                                <div class="course-footer">
+                                    <div class="course-price">2800 EGP</div>
+                                    <a href="https://forms.gle/YOUR_BOOKING_LINK_4" target="_blank" class="btn-enroll">
+                                        Enroll Now <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 5: Mobile App Development -->
+                    <div class="col-lg-4 col-md-6 course-item" data-category="programming">
+                        <div class="course-card">
+                            <img src="images/3e400-mobile-banner.jpg" alt="Mobile App Development" class="course-image">
+                            <div class="course-content">
+                                <span class="course-badge">Mobile Development</span>
+                                <h3 class="course-title">Mobile App Development</h3>
+                                <p class="course-description">Build cross-platform mobile applications using React Native and Flutter frameworks.</p>
+                                
+                                <ul class="features-list">
+                                    <li>React Native & Flutter</li>
+                                    <li>iOS & Android Development</li>
+                                    <li>API Integration</li>
+                                    <li>App Store Deployment</li>
+                                </ul>
+
+                                <div class="course-meta">
+                                    <div class="meta-item">
+                                        <i class="bi bi-clock"></i>
+                                        <span>14 Weeks</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="bi bi-person"></i>
+                                        <span>Eng.George Magdy</span>
+                                    </div>
+                                </div>
+
+                                <div class="course-footer">
+                                    <div class="course-price">4000 EGP</div>
+                                    <a href="https://forms.gle/YOUR_BOOKING_LINK_5" target="_blank" class="btn-enroll">
+                                        Enroll Now <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 6: Digital Marketing -->
+                    <div class="col-lg-4 col-md-6 course-item" data-category="design">
+                        <div class="course-card">
+                            <img src="images/images (2)de.jpg" alt="Digital Marketing" class="course-image">
+                            <div class="course-content">
+                                <span class="course-badge">Marketing</span>
+                                <h3 class="course-title">Digital Marketing & Social Media</h3>
+                                <p class="course-description">Master digital marketing strategies, SEO, social media management, and content creation.</p>
+                                
+                                <ul class="features-list">
+                                    <li>SEO & Content Marketing</li>
+                                    <li>Social Media Strategies</li>
+                                    <li>Google Ads & Analytics</li>
+                                    <li>Campaign Management</li>
+                                </ul>
+
+                                <div class="course-meta">
+                                    <div class="meta-item">
+                                        <i class="bi bi-clock"></i>
+                                        <span>8 Weeks</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="bi bi-person"></i>
+                                        <span>Eng.George Magdy</span>
+                                    </div>
+                                </div>
+
+                                <div class="course-footer">
+                                    <div class="course-price">2200 EGP</div>
+                                    <a href="https://forms.gle/YOUR_BOOKING_LINK_6" target="_blank" class="btn-enroll">
+                                        Enroll Now <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- See More Courses Button -->
+                <div class="text-center">
+                    <a href="#" class="see-more-btn">
+                        See More Courses <i class="bi bi-arrow-down-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </section>
 
             <section class="featured section-padding">
                 <div class="container">
@@ -424,6 +861,29 @@ We aim to inspire creativity, develop critical skills, and prepare learners for 
         <script src="js/jQuery.headroom.js"></script>
         <script src="js/slick.min.js"></script>
         <script src="js/custom.js"></script>
-
+<script>
+     // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                const courses = document.querySelectorAll('.course-item');
+                
+                courses.forEach(course => {
+                    if (filter === 'all' || course.getAttribute('data-category') === filter) {
+                        course.style.display = 'block';
+                        setTimeout(() => course.style.opacity = '1', 10);
+                    } else {
+                        course.style.opacity = '0';
+                        setTimeout(() => course.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+</script>
     </body>
 </html>
